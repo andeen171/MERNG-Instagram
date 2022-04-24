@@ -1,0 +1,22 @@
+{
+  "name": "merng-instagram",
+  "version": "1.0.0",
+  "description": "Instagram clone made with the MERNG stack (MongoDB, Express, React, Node and GraphQL) and typescript as well.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16-strictest-esm": "^1.0.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "apollo-server": "^3.6.7",
+    "graphql": "^16.3.0",
+    "mongoose": "^6.3.1"
+  }
+}
