@@ -1,20 +1,11 @@
-import { ApolloServer } from 'apollo-server';
-import mongoose from 'mongoose';
-import typeDefs from './typeDefs';
-import resolvers from './resolvers';
-import { URI } from './config';
+import App from '@/app';
+import validateEnv from '@utils/validateEnv';
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+import { authResolver } from '@resolvers/auth.resolver';
+import { userResolver } from '@resolvers/users.resolver';
 
-mongoose
-  .connect(URI, {})
-  .then(() => {
-    console.log('MongoDB Connected');
-    return server.listen({ port: 5000 });
-  })
-  .then(({ url }: any) => {
-    console.log(`Server running at ${url}`);
-  });
+validateEnv();
+
+const app = new App([authResolver, userResolver]);
+
+app.listen();
